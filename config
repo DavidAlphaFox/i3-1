@@ -1,0 +1,97 @@
+ # __________________________________________________
+# /\                                                 \
+# \_| __        __    _                 _   _ _____  |
+ #  | \ \      / /__ | | __ _ _ __   __| | (_)___ /  |
+ #  |  \ \ /\ / / _ \| |/ _` | '_ \ / _` | | | |_ \  |
+ #  |   \ V  V / (_) | | (_| | | | | (_| | | |___) | |
+ #  |    \_/\_/ \___/|_|\__,_|_| |_|\__,_| |_|____/  |
+ #  |                                                |
+ #  |   _____________________________________________|_
+ #   \_/_______________________________________________/
+
+#################
+# Include Files #
+#################
+include /home/woland/.config/i3/themes-and-bar/dracula.conf
+include /home/woland/.config/i3/bindings
+include /home/woland/.config/i3/autostart
+###########
+# MOD KEY #
+###########
+set $mod Mod4
+set $mod1 Mod1
+floating_modifier $mod
+#####################
+# hide_edge_borders #
+#####################
+for_window [class="^.*"] border pixel 1
+workspace_layout default
+# default_border none
+# new_window 1pixel
+# force_focus_wrapping yes
+######
+#Gaps#
+######
+gaps inner 5
+gaps outer 5
+############
+# Terminal #
+############
+set $myTerm xterm -sk -ti vt340
+set $myTerm2 roxterm
+########################
+#multi-monitor settings#
+########################
+workspace $ws1 output primary
+workspace $ws2 output primary
+workspace $ws3 output primary
+workspace $ws4 output primary
+workspace $ws5 output primary
+
+workspace $ws6 output HDMI1
+workspace $ws7 output HDMI1
+workspace $ws8 output HDMI1
+workspace $ws9 output HDMI1
+workspace $ws0 output HDMI1
+##############
+# WORKSPACES #
+##############
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+########
+#Assign#
+########
+
+#Always Floating
+#for_window [class="REAPER" instance="REAPER"] floating enable , border normal 2
+for_window [class="REAPER" instance="REAPER"] floating enable , border normal 2
+for_window [class="REAPER" instance="REAPER"] output primary
+for_window [class="albert"] move absolute position 639 388
+# for_window [class="Virt-manager"] floating enable, move to workspace $ws7
+
+#XClock
+for_window [class="XClock"] floating enable
+for_window [class="glhack"] floating enable , resize 151x36
+# for_window [class="XClock"] floating enable , border normal 2 
+
+#To Workspace
+for_window [class="Brave-browser"] move to workspace $ws4
+for_window [class="TelegramDesktop"] move to workspace $ws2
+for_window [class="firefox"] move to workspace $ws3
+for_window [class="qutebrowser"] move to workspace $ws1
+
+#########
+# Fonts #
+#########
+font xft:Mononoki 0
+# Font Pango Can Be Used For Glyphs In The Bar
+
+# for_window [workspace="2"] floating enable
